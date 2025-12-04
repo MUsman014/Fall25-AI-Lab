@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Score Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h1>Predict Math Score</h1>
+
+<div class="form-container">
+    <label>Gender:</label>
+    <select id="gender">
+        <option>male</option>
+        <option>female</option>
+    </select>
+
+    <label>Race/Ethnicity:</label>
+    <select id="race">
+        <option>group A</option>
+        <option>group B</option>
+        <option>group C</option>
+        <option>group D</option>
+        <option>group E</option>
+    </select>
+
+    <label>Parental Education:</label>
+    <select id="parent">
+        <option>high school</option>
+        <option>some college</option>
+        <option>bachelor's degree</option>
+        <option>master's degree</option>
+    </select>
+
+    <label>Lunch:</label>
+    <select id="lunch">
+        <option>standard</option>
+        <option>free/reduced</option>
+    </select>
+
+    <label>Test Preparation:</label>
+    <select id="prep">
+        <option>none</option>
+        <option>completed</option>
+    </select>
+
+    <label>Reading Score:</label>
+    <input type="number" id="reading">
+
+    <label>Writing Score:</label>
+    <input type="number" id="writing">
+
+    <button onclick="predictScore()">Predict</button>
+</div>
+
+<h2 id="result"></h2>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
