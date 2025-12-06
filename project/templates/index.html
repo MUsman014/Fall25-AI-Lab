@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plant Disease Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Plant Disease Prediction</h1>
+
+    <form action="/predict" method="POST">
+
+        <input type="number" step="0.01" name="leaf_color_score" placeholder="Leaf Color Score" required>
+        <input type="number" step="0.01" name="moisture_level" placeholder="Moisture Level" required>
+        <input type="number" step="0.01" name="temperature" placeholder="Temperature" required>
+        <input type="number" step="0.01" name="humidity" placeholder="Humidity" required>
+        <input type="number" step="0.01" name="soil_ph" placeholder="Soil pH" required>
+        <input type="number" step="1" name="spotting_severity" placeholder="Spotting Severity" required>
+        <input type="number" step="1" name="wilt_level" placeholder="Wilt Level" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result is not none %}
+    <div class="result">
+        <h2>Prediction Result: {{ result }}</h2>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
